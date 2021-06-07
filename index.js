@@ -27,21 +27,24 @@ inquirer
     });
 
     if (users.length === 0)
-      console.log('Sorry, we could not find your account');
+      console.log(
+        chalk.red.bold('\tERROR!!!') + ' Sorry, we could not find your account'
+      );
     else {
       const [user] = users;
       let { ID, name, pass, bal } = user;
+      bal = parseInt(bal, 10);
 
       // =========================== Withdraw/Deposit ===========================
       inquirer
         .prompt([
           {
             type: 'list',
-            message: `Hello ${chalk.cyan.bold(
+            message: `\nHello ${chalk.cyan.bold(
               name
             )}, your account balance is ${chalk.cyan.bold(
               'Ksh.' + bal
-            )}. What do you want to do?`,
+            )}. ${chalk.bold.bgMagenta('\n\nWhat do you want to do?')}`,
             name: 'transactType',
             choices: ['Deposit', 'Withdraw'],
           },
@@ -62,7 +65,7 @@ inquirer
             ])
             .then(({ amount }) => {
               // =========================== Transaction success/fail ===========================
-
+              amount = parseInt(amount, 10);
               transact(transactType);
               setTimeout(() => {
                 if (transactType === 'Withdraw' && amount > bal) {
@@ -86,16 +89,18 @@ inquirer
                       { padding: 1 }
                     )
                   );
+                  // =========================== Update new balance ===========================
+                  user.bal = bal;
                 }
-              }, 2000);
+              }, 1000);
             });
         });
     }
   });
 
 const options = {
-  Deposit: chalk.blue.bold('Depositing amount. Please wait...'),
-  Withdraw: chalk.blue.bold('Withdrawing amount. Please wait...'),
+  Deposit: chalk.blue.bold('\tDepositing amount. Please wait...'),
+  Withdraw: chalk.blue.bold('\tWithdrawing amount. Please wait...'),
 };
 
 transact = (transactType) => {
