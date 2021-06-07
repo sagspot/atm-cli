@@ -1,0 +1,26 @@
+[
+  {
+    "ID": 1,
+    "name": "John Doe",
+    "pass": "1234",
+    "bal": "2000"
+  },
+  {
+    "ID": 2,
+    "name": "Jane Doe",
+    "pass": "0000",
+    "bal": "0"
+  },
+  {
+    "ID": 3,
+    "name": "Lamack Doe",
+    "pass": "1111",
+    "bal": "500"
+  },
+  {
+    "ID": 4,
+    "name": "Linus Doe",
+    "pass": "1212",
+    "bal": "200"
+  }
+]
