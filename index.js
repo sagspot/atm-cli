@@ -1,4 +1,5 @@
-// 'use strict';
+#!/usr/bin/env node
+
 const inquirer = require('inquirer');
 const boxen = require('boxen');
 const chalk = require('chalk');
