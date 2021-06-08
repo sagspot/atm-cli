@@ -2,15 +2,14 @@
 
 ## Usage
 
-Enter an allowed password;
+- Enter an allowed username & password
 
-```
-0000,
-1111,
-1234,
-1212
-```
+- You can enter any one the following. Take note of their corresponding passwords.
 
-Select transaction type `Deposit/Withdraw`
+  - `sags : 1234`
+  - `ace : 0000`
+  - `jane : 1212`
 
-Enter amount
+- Select transaction type `Check balance` / `Deposit` / `Withdraw`
+
+- Follow prompts
